@@ -53,7 +53,7 @@
         data-chapter-title="GDB"
         data-filepath="tools/gdb.md"
         data-basepath=".."
-        data-revision="Thu May 26 2016 19:01:17 GMT+0800 (CST)"
+        data-revision="Thu Jun 02 2016 12:20:45 GMT+0800 (CST)"
         data-innerlanguage="">
     
 
@@ -471,18 +471,56 @@ i r
 <p><code>p</code> &#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x7684;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;</p>
 <p><code>p/&#x683C;&#x5F0F; &#x53D8;&#x91CF;</code></p>
 <p>&#x683C;&#x5F0F;&#x5217;&#x8868;&#x5982;&#x4E0B;:</p>
-<p>&#x683C;&#x5F0F; |  &#x8BF4;&#x660E;   |
------+----------
-x    | &#x5341;&#x516D;&#x8FDB;&#x5236;|
-d    | &#x5341;&#x8FDB;&#x5236;  |
-u    | &#x65E0;&#x7B26;&#x53F7;&#x5341;&#x8FDB;&#x5236;  |
-o    | &#x516B;&#x8FDB;&#x5236;   |
-t    | &#x4E8C;&#x8FDB;&#x5236;   |
-a    | &#x5730;&#x5740;     |
-c    | &#x5B57;&#x7B26;&#x4E32;   |
-f    | float |
-s    | string |
-i    | &#x673A;&#x5668;&#x7801; |</p>
+<table>
+<thead>
+<tr>
+<th>&#x683C;&#x5F0F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>&#x5341;&#x516D;&#x8FDB;&#x5236;</td>
+</tr>
+<tr>
+<td>d</td>
+<td>&#x5341;&#x8FDB;&#x5236;</td>
+</tr>
+<tr>
+<td>u</td>
+<td>&#x65E0;&#x7B26;&#x53F7;&#x5341;&#x8FDB;&#x5236;</td>
+</tr>
+<tr>
+<td>o</td>
+<td>&#x516B;&#x8FDB;&#x5236;</td>
+</tr>
+<tr>
+<td>t</td>
+<td>&#x4E8C;&#x8FDB;&#x5236;</td>
+</tr>
+<tr>
+<td>a</td>
+<td>&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>c</td>
+<td>&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>f</td>
+<td>float</td>
+</tr>
+<tr>
+<td>s</td>
+<td>string</td>
+</tr>
+<tr>
+<td>i</td>
+<td>&#x673A;&#x5668;&#x7801;</td>
+</tr>
+</tbody>
+</table>
 <p><code>x</code> &#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x8DDF; <code>p</code> &#x7C7B;&#x4F3C;</p>
 <p><code>x/&#x683C;&#x5F0F; &#x5730;&#x5740;</code></p>
 <pre><code class="lang-bash">x/<span class="hljs-number">10</span>i <span class="hljs-variable">$pc</span> // &#x67E5;&#x770B; pc &#x5BC4;&#x5B58;&#x5668;&#x6307;&#x5411;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x7684;<span class="hljs-number">10</span>&#x6761;&#x6C47;&#x7F16;
