@@ -1,600 +1,414 @@
-<!DOCTYPE HTML>
-<html lang="en" >
-    
-    <head>
-        
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>GDB | Notebook</title>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.5">
-        
-        
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-        
-    <link rel="stylesheet" href="../gitbook/style.css">
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
-        
-    
-    
-
-        
-    
-    
-    <link rel="next" href="../tools/test.html" />
-    
-    
-    <link rel="prev" href="../tools/tools.html" />
-    
-
-        
-    </head>
-    <body>
-        
-        
-    <div class="book"
-        data-level="6.1"
-        data-chapter-title="GDB"
-        data-filepath="tools/gdb.md"
-        data-basepath=".."
-        data-revision="Thu Jun 02 2016 12:20:45 GMT+0800 (CST)"
-        data-innerlanguage="">
-    
-
-<div class="book-summary">
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-            
-            
-
-            
-
-            
-    
-        <li class="chapter " data-level="0" data-path="index.html">
-            
-                
-                    <a href="../index.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                        Introduction
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="1" data-path="chapter1.html">
-            
-                
-                    <a href="../chapter1.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                        First Chapter
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="2" data-path="os/readme.html">
-            
-                
-                    <a href="../os/readme.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                        OS
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3" data-path="programing_language/programming_language.html">
-            
-                
-                    <a href="../programing_language/programming_language.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                        Programming language
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1" data-path="programing_language/python/python.html">
-            
-                
-                    <a href="../programing_language/python/python.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                        Python
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="programing_language/go/go.html">
-            
-                
-                    <a href="../programing_language/go/go.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                        Go
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.1" data-path="programing_language/go/performance.html">
-            
-                
-                    <a href="../programing_language/go/performance.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.1.</b>
-                        
-                        Performance
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="programing_language/c/c.html">
-            
-                
-                    <a href="../programing_language/c/c.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                        C
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.4" data-path="programing_language/asm/asm.html">
-            
-                
-                    <a href="../programing_language/asm/asm.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                        ASM
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="3.5" data-path="programing_language/lisp/lisp.html">
-            
-                
-                    <a href="../programing_language/lisp/lisp.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.5.</b>
-                        
-                        Lisp
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4" data-path="ml/machine_learning.html">
-            
-                
-                    <a href="../ml/machine_learning.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                        Machine Learning
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="5" data-path="distributed_system/distributed_system.html">
-            
-                
-                    <a href="../distributed_system/distributed_system.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                        Distributed System
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6" data-path="tools/tools.html">
-            
-                
-                    <a href="../tools/tools.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                        Tools
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="6.1" data-path="tools/gdb.html">
-            
-                
-                    <a href="../tools/gdb.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                        GDB
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="6.2" data-path="tools/test.html">
-            
-                
-                    <a href="../tools/test.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.2.</b>
-                        
-                        Test
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7" data-path="others/others.html">
-            
-                
-                    <a href="../others/others.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.</b>
-                        
-                        Others
-                    </a>
-            
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1" data-path="others/bitcask.html">
-            
-                
-                    <a href="../others/bitcask.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.1.</b>
-                        
-                        Bitcask
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2" data-path="others/beansdb.html">
-            
-                
-                    <a href="../others/beansdb.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.2.</b>
-                        
-                        GoBeansDB
-                    </a>
-            
-            
-        </li>
-    
-        <li class="chapter " data-level="7.3" data-path="others/nocache.html">
-            
-                
-                    <a href="../others/nocache.html">
-                
-                        <i class="fa fa-check"></i>
-                        
-                            <b>7.3.</b>
-                        
-                        Minimize Filesystem Caching Effects
-                    </a>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
 
 
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GDB &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Tools" href="index.html"/>
+        <link rel="next" title="Others" href="../others/index.html"/>
+        <link rel="prev" title="Tools" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SunisDown's NoteBook
+          
+
+          
+          </a>
+
+          
             
-            <li class="divider"></li>
-            <li>
-                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                    Published with GitBook
-                </a>
-            </li>
             
-        </ul>
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GDB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">启动 GDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">设置断点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">运行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">显示栈帧</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">显示所有栈帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#n">显示前 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">显示最后 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">显示局部变量与栈帧</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">显示变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">显示寄存器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">单步调试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">监视点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">改变变量的值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attach">attach 到进程</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">保存历史记录：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
     </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">SunisDown's NoteBook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Tools</a> &raquo;</li>
+      
+    <li>GDB</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tools/gdb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
 </div>
-
-    <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header" role="navigation">
-    <!-- Actions Left -->
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >Notebook</a>
-    </h1>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdb">
+<h1>GDB<a class="headerlink" href="#gdb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>启动 GDB<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">gdb</span> <span class="n">可执行文件名</span>
+</pre></div>
 </div>
+<p>比如要调试 <code class="docutils literal"><span class="pre">beansdb</span></code>，则直接输入 <code class="docutils literal"><span class="pre">gdb</span> <span class="pre">beansdb</span></code></p>
+</div>
+<div class="section" id="id2">
+<h2>设置断点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="k">break</span> <span class="n">main</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">break</span></code> 可以简写成 <code class="docutils literal"><span class="pre">b</span></code></p>
+<p>断点可以通过函数名，当前文件内行号等设置：</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="k">break</span> <span class="n">函数名</span>
+<span class="k">break</span> <span class="n">行号</span>
+<span class="k">break</span> <span class="n">文件名</span><span class="p">:</span><span class="n">行号</span>
+<span class="k">break</span> <span class="n">文件名</span><span class="p">:</span><span class="n">函数名</span>
+<span class="k">break</span> <span class="o">+</span><span class="n">偏移量</span> <span class="c1">#当前位置之后 3 行</span>
+<span class="k">break</span> <span class="o">-</span><span class="n">偏移量</span>
+<span class="k">break</span> <span class="o">*</span><span class="n">地址</span>
+</pre></div>
+</div>
+<p>如果不设置指定断点，则默认是下一行设置断点。</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">b</span>
+</pre></div>
+</div>
+<p>可以通过 <code class="docutils literal"><span class="pre">info</span></code> 来看有哪些断点</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="n">b</span> <span class="c1"># info break</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>运行<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>直接在 <code class="docutils literal"><span class="pre">gdb</span></code> 里面执行 <code class="docutils literal"><span class="pre">run</span></code>
+命令就可以，如果本身有参数，还可以在后面加参数，比如启动某一个服务的时候需要配置文件，则需要在
+<code class="docutils literal"><span class="pre">run</span></code> 后面跟响应的参数：</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="o">-</span><span class="n">conf</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">xxxxoooo</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>显示栈帧<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>显示所有栈帧<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">backtrace</span>
 
-            <div class="page-wrapper" tabindex="-1" role="main">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-">
-                    
-                        <h1 id="gdb">GDB</h1>
-<h2 id="&#x542F;&#x52A8;-gdb">&#x542F;&#x52A8; GDB</h2>
-<pre><code class="lang-bash">gdb &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x540D;
-</code></pre>
-<p>&#x6BD4;&#x5982;&#x8981;&#x8C03;&#x8BD5; <code>beansdb</code>&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8F93;&#x5165; <code>gdb beansdb</code></p>
-<h2 id="&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;">&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</h2>
-<pre><code class="lang-bash"><span class="hljs-built_in">break</span> main
-</code></pre>
-<p><code>break</code> &#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x6210; <code>b</code></p>
-<p>&#x65AD;&#x70B9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5185;&#x884C;&#x53F7;&#x7B49;&#x8BBE;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">break</span> &#x51FD;&#x6570;&#x540D;
-<span class="hljs-built_in">break</span> &#x884C;&#x53F7;
-<span class="hljs-built_in">break</span> &#x6587;&#x4EF6;&#x540D;:&#x884C;&#x53F7;
-<span class="hljs-built_in">break</span> &#x6587;&#x4EF6;&#x540D;:&#x51FD;&#x6570;&#x540D;
-<span class="hljs-built_in">break</span> +&#x504F;&#x79FB;&#x91CF; <span class="hljs-comment">#&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x4E4B;&#x540E; 3 &#x884C;</span>
-<span class="hljs-built_in">break</span> -&#x504F;&#x79FB;&#x91CF;
-<span class="hljs-built_in">break</span> *&#x5730;&#x5740;
-</code></pre>
-<p>&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;&#x6307;&#x5B9A;&#x65AD;&#x70B9;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x662F;&#x4E0B;&#x4E00;&#x884C;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;</p>
-<pre><code class="lang-bash">b
-</code></pre>
-<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>info</code> &#x6765;&#x770B;&#x6709;&#x54EA;&#x4E9B;&#x65AD;&#x70B9;</p>
-<pre><code class="lang-bash">i b <span class="hljs-comment"># info break</span>
-</code></pre>
-<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
-<p>&#x76F4;&#x63A5;&#x5728; <code>gdb</code> &#x91CC;&#x9762;&#x6267;&#x884C; <code>run</code> &#x547D;&#x4EE4;&#x5C31;&#x53EF;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x8EAB;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x9762;&#x52A0;&#x53C2;&#x6570;&#xFF0C;&#x6BD4;&#x5982;&#x542F;&#x52A8;&#x67D0;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728; <code>run</code> &#x540E;&#x9762;&#x8DDF;&#x54CD;&#x5E94;&#x7684;&#x53C2;&#x6570;&#xFF1A;</p>
-<pre><code class="lang-bash">run -conf /etc/xxxxoooo.conf
-</code></pre>
-<h2 id="&#x663E;&#x793A;&#x6808;&#x5E27;">&#x663E;&#x793A;&#x6808;&#x5E27;</h2>
-<h3 id="&#x663E;&#x793A;&#x6240;&#x6709;&#x6808;&#x5E27;">&#x663E;&#x793A;&#x6240;&#x6709;&#x6808;&#x5E27;</h3>
-<pre><code class="lang-bash">backtrace
+<span class="n">bt</span>
 
-bt
+<span class="n">info</span> <span class="n">stack</span>
 
-info stack
+<span class="n">where</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="n">
+<h3>显示前 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧<a class="headerlink" href="#n" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="n">N</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>显示最后 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="o">-</span><span class="n">N</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>显示局部变量与栈帧<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">bt</span> <span class="n">full</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>显示变量<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="nb">print</span>
 
-<span class="hljs-built_in">where</span>
-</code></pre>
-<h3 id="&#x663E;&#x793A;&#x524D;-n-&#x4E2A;&#x6808;&#x5E27;">&#x663E;&#x793A;&#x524D; <code>N</code> &#x4E2A;&#x6808;&#x5E27;</h3>
-<pre><code class="lang-bash">bt N
-</code></pre>
-<h3 id="&#x663E;&#x793A;&#x6700;&#x540E;-n-&#x4E2A;&#x6808;&#x5E27;">&#x663E;&#x793A;&#x6700;&#x540E; <code>N</code> &#x4E2A;&#x6808;&#x5E27;</h3>
-<pre><code class="lang-bash">bt -N
-</code></pre>
-<h3 id="&#x663E;&#x793A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4E0E;&#x6808;&#x5E27;">&#x663E;&#x793A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4E0E;&#x6808;&#x5E27;</h3>
-<pre><code class="lang-bash">bt full
-</code></pre>
-<h2 id="&#x663E;&#x793A;&#x53D8;&#x91CF;">&#x663E;&#x793A;&#x53D8;&#x91CF;</h2>
-<pre><code class="lang-bash"><span class="hljs-built_in">print</span>
+<span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>显示寄存器<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="n">reg</span>
 
-p
-</code></pre>
-<h2 id="&#x663E;&#x793A;&#x5BC4;&#x5B58;&#x5668;">&#x663E;&#x793A;&#x5BC4;&#x5B58;&#x5668;</h2>
-<pre><code class="lang-bash">info reg
-
-i r
-</code></pre>
-<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x524D;&#x6DFB;&#x52A0; <code>$</code> &#x663E;&#x793A;&#x5404;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
-<p><code>p $sp</code></p>
-<p><code>p</code> &#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x7684;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x683C;&#x5F0F;</p>
-<p><code>p/&#x683C;&#x5F0F; &#x53D8;&#x91CF;</code></p>
-<p>&#x683C;&#x5F0F;&#x5217;&#x8868;&#x5982;&#x4E0B;:</p>
-<table>
-<thead>
-<tr>
-<th>&#x683C;&#x5F0F;</th>
-<th>&#x8BF4;&#x660E;</th>
+<span class="n">i</span> <span class="n">r</span>
+</pre></div>
+</div>
+<p>也可以在寄存器前添加 <code class="docutils literal"><span class="pre">$</span></code> 显示各个寄存器的内容。</p>
+<p><code class="docutils literal"><span class="pre">p</span> <span class="pre">$sp</span></code></p>
+<p><code class="docutils literal"><span class="pre">p</span></code> 输出信息的可以使用不同的格式</p>
+<p><code class="docutils literal"><span class="pre">p/格式</span> <span class="pre">变量</span></code></p>
+<p>格式列表如下:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">格式</th>
+<th class="head">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>x</td>
-<td>&#x5341;&#x516D;&#x8FDB;&#x5236;</td>
+<tbody valign="top">
+<tr class="row-even"><td>x</td>
+<td>十六进制</td>
 </tr>
-<tr>
-<td>d</td>
-<td>&#x5341;&#x8FDB;&#x5236;</td>
+<tr class="row-odd"><td>d</td>
+<td>十进制</td>
 </tr>
-<tr>
-<td>u</td>
-<td>&#x65E0;&#x7B26;&#x53F7;&#x5341;&#x8FDB;&#x5236;</td>
+<tr class="row-even"><td>u</td>
+<td>无符号十进制</td>
 </tr>
-<tr>
-<td>o</td>
-<td>&#x516B;&#x8FDB;&#x5236;</td>
+<tr class="row-odd"><td>o</td>
+<td>八进制</td>
 </tr>
-<tr>
-<td>t</td>
-<td>&#x4E8C;&#x8FDB;&#x5236;</td>
+<tr class="row-even"><td>t</td>
+<td>二进制</td>
 </tr>
-<tr>
-<td>a</td>
-<td>&#x5730;&#x5740;</td>
+<tr class="row-odd"><td>a</td>
+<td>地址</td>
 </tr>
-<tr>
-<td>c</td>
-<td>&#x5B57;&#x7B26;&#x4E32;</td>
+<tr class="row-even"><td>c</td>
+<td>字符串</td>
 </tr>
-<tr>
-<td>f</td>
+<tr class="row-odd"><td>f</td>
 <td>float</td>
 </tr>
-<tr>
-<td>s</td>
+<tr class="row-even"><td>s</td>
 <td>string</td>
 </tr>
-<tr>
-<td>i</td>
-<td>&#x673A;&#x5668;&#x7801;</td>
+<tr class="row-odd"><td>i</td>
+<td>机器码</td>
 </tr>
 </tbody>
 </table>
-<p><code>x</code> &#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x683C;&#x5F0F;&#x8DDF; <code>p</code> &#x7C7B;&#x4F3C;</p>
-<p><code>x/&#x683C;&#x5F0F; &#x5730;&#x5740;</code></p>
-<pre><code class="lang-bash">x/<span class="hljs-number">10</span>i <span class="hljs-variable">$pc</span> // &#x67E5;&#x770B; pc &#x5BC4;&#x5B58;&#x5668;&#x6307;&#x5411;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x7684;<span class="hljs-number">10</span>&#x6761;&#x6C47;&#x7F16;
-</code></pre>
-<h2 id="&#x5355;&#x6B65;&#x8C03;&#x8BD5;">&#x5355;&#x6B65;&#x8C03;&#x8BD5;</h2>
-<pre><code class="lang-bash">n/next &#x4E0B;&#x4E00;&#x6B65;
-s/step &#x4E0B;&#x4E00;&#x6B65;,&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x5185;&#x90E8;
-nexti &#x4E0B;&#x4E00;&#x884C;&#x6C47;&#x7F16;
-stepi &#x4E0B;&#x4E00;&#x884C;&#x6C47;&#x7F16;,&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x5185;&#x90E8;
-c/<span class="hljs-built_in">continue</span> &#x7EE7;&#x7EED;&#x6267;&#x884C;&#x76F4;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x65AD;&#x70B9;
-</code></pre>
-<h2 id="&#x76D1;&#x89C6;&#x70B9;">&#x76D1;&#x89C6;&#x70B9;</h2>
-<pre><code class="lang-bash">watch xxx // xxx &#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x6682;&#x505C;, xxx &#x901A;&#x5E38;&#x4E3A;&#x53D8;&#x91CF;
-awatch xxx // xxx &#x88AB;&#x8BBF;&#x95EE;&#x6216;&#x8005;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x6682;&#x505C;
-rwatch xxx // xxx &#x88AB;&#x8BBF;&#x95EE;&#x65F6;
-</code></pre>
-<h2 id="&#x6539;&#x53D8;&#x53D8;&#x91CF;&#x7684;&#x503C;">&#x6539;&#x53D8;&#x53D8;&#x91CF;&#x7684;&#x503C;</h2>
-<pre><code>set variable xxx=123
-</code></pre><h2 id="attach-&#x5230;&#x8FDB;&#x7A0B;">attach &#x5230;&#x8FDB;&#x7A0B;</h2>
-<p>&#x9700;&#x8981;&#x8C03;&#x8BD5;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x7684;&#x8FDB;&#x7A0B;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x505A;&#x3002;</p>
-<pre><code class="lang-bash">gdb
+<p><code class="docutils literal"><span class="pre">x</span></code> 可以显示内存中的内容，格式跟 <code class="docutils literal"><span class="pre">p</span></code> 类似</p>
+<p><code class="docutils literal"><span class="pre">x/格式</span> <span class="pre">地址</span></code></p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>x/10i $pc // 查看 pc 寄存器指向地址开始的10条汇编
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>单步调试<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">/</span><span class="nb">next</span> <span class="n">下一步</span>
+<span class="n">s</span><span class="o">/</span><span class="n">step</span> <span class="n">下一步</span><span class="p">,</span><span class="n">可以进入函数内部</span>
+<span class="n">nexti</span> <span class="n">下一行汇编</span>
+<span class="n">stepi</span> <span class="n">下一行汇编</span><span class="p">,</span><span class="n">可以进入函数内部</span>
+<span class="n">c</span><span class="o">/</span><span class="k">continue</span> <span class="n">继续执行直到下一个断点</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>监视点<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">watch</span> <span class="n">xxx</span> <span class="o">//</span> <span class="n">xxx</span> <span class="n">发生变化时暂停</span><span class="p">,</span> <span class="n">xxx</span> <span class="n">通常为变量</span>
+<span class="n">awatch</span> <span class="n">xxx</span> <span class="o">//</span> <span class="n">xxx</span> <span class="n">被访问或者发生变化时暂停</span>
+<span class="n">rwatch</span> <span class="n">xxx</span> <span class="o">//</span> <span class="n">xxx</span> <span class="n">被访问时</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>改变变量的值<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">variable</span> <span class="n">xxx</span><span class="o">=</span><span class="mi">123</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attach">
+<h2>attach 到进程<a class="headerlink" href="#attach" title="Permalink to this headline">¶</a></h2>
+<p>需要调试一个已经启动的进程时，可以这么做。</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">gdb</span>
 
-(gdb) attach <span class="hljs-number">1234</span> //<span class="hljs-number">1234</span> &#x4E3A;&#x8FDB;&#x7A0B;&#x53F7;
-</code></pre>
-<h3 id="&#x4FDD;&#x5B58;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF1A;">&#x4FDD;&#x5B58;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF1A;</h3>
-<ul>
+<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">attach</span> <span class="mi">1234</span> <span class="o">//</span><span class="mi">1234</span> <span class="n">为进程号</span>
+</pre></div>
+</div>
+<div class="section" id="id13">
+<h3>保存历史记录：<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
 <li>set history hilename demo.gdb</li>
 <li>set history save</li>
 </ul>
-
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
-        </div>
-
-        
-        <a href="../tools/tools.html" class="navigation navigation-prev " aria-label="Previous page: Tools"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../tools/test.html" class="navigation navigation-next " aria-label="Next page: Test"><i class="fa fa-angle-right"></i></a>
-        
-    </div>
+</div>
+</div>
 </div>
 
-        
-<script src="../gitbook/app.js"></script>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../others/index.html" class="btn btn-neutral float-right" title="Others" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Tools" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
+  <hr/>
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SunisDown.
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+</footer>
 
-        
-    </body>
-    
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

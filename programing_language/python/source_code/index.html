@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Source Code of Python &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Python" href="../index.html"/>
+        <link rel="next" title="Tools" href="../../../tools/index.html"/>
+        <link rel="prev" title="Python" href="../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> SunisDown's NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming language</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Source Code of Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#opcode">解释器与 opcode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../others/index.html">Others</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">SunisDown's NoteBook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Programming language</a> &raquo;</li>
+      
+          <li><a href="../index.html">Python</a> &raquo;</li>
+      
+    <li>Source Code of Python</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../_sources/programing_language/python/source_code/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="source-code-of-python">
+<h1>Source Code of Python<a class="headerlink" href="#source-code-of-python" title="Permalink to this headline">¶</a></h1>
+<p>人生苦短，我用Python</p>
+<div class="section" id="opcode">
+<h2>解释器与 opcode<a class="headerlink" href="#opcode" title="Permalink to this headline">¶</a></h2>
+<p>先创建一个 <code class="docutils literal"><span class="pre">test.py</span></code> 文件。</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在 <code class="docutils literal"><span class="pre">IPython</span></code> 中查看</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span>
+<span class="n">c</span><span class="o">.</span><span class="n">co_argcount</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>            <span class="n">c</span><span class="o">.</span><span class="n">co_filename</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_flags</span>           <span class="n">c</span><span class="o">.</span><span class="n">co_kwonlyargcount</span>  <span class="n">c</span><span class="o">.</span><span class="n">co_name</span>            <span class="n">c</span><span class="o">.</span><span class="n">co_nlocals</span>         <span class="n">c</span><span class="o">.</span><span class="n">co_varnames</span>
+<span class="n">c</span><span class="o">.</span><span class="n">co_cellvars</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_consts</span>          <span class="n">c</span><span class="o">.</span><span class="n">co_firstlineno</span>     <span class="n">c</span><span class="o">.</span><span class="n">co_freevars</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_lnotab</span>          <span class="n">c</span><span class="o">.</span><span class="n">co_names</span>           <span class="n">c</span><span class="o">.</span><span class="n">co_stacksize</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_co</span>
+<span class="n">c</span><span class="o">.</span><span class="n">co_code</span>    <span class="n">c</span><span class="o">.</span><span class="n">co_consts</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
+</pre></div>
+</div>
+<p>从 <code class="docutils literal"><span class="pre">IPython</span></code> 中可以看到，<code class="docutils literal"><span class="pre">c</span></code> 有很多属性，这些属性都定义在 <a class="reference external" href="https://github.com/python/cpython/blob/master/Include/code.h#L10">code.h</a> 里：</p>
+<div class="code c highlight-default"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Bytecode</span> <span class="nb">object</span> <span class="o">*/</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="p">{</span>
+    <span class="n">PyObject_HEAD</span>
+    <span class="nb">int</span> <span class="n">co_argcount</span><span class="p">;</span>                <span class="o">/*</span> <span class="c1">#arguments, except *args */</span>
+    <span class="nb">int</span> <span class="n">co_kwonlyargcount</span><span class="p">;</span>  <span class="o">/*</span> <span class="c1">#keyword only arguments */</span>
+    <span class="nb">int</span> <span class="n">co_nlocals</span><span class="p">;</span>         <span class="o">/*</span> <span class="c1">#local variables */</span>
+    <span class="nb">int</span> <span class="n">co_stacksize</span><span class="p">;</span>               <span class="o">/*</span> <span class="c1">#entries needed for evaluation stack */</span>
+    <span class="nb">int</span> <span class="n">co_flags</span><span class="p">;</span>           <span class="o">/*</span> <span class="n">CO_</span><span class="o">...</span><span class="p">,</span> <span class="n">see</span> <span class="n">below</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_code</span><span class="p">;</span>              <span class="o">/*</span> <span class="n">instruction</span> <span class="n">opcodes</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_consts</span><span class="p">;</span>    <span class="o">/*</span> <span class="nb">list</span> <span class="p">(</span><span class="n">constants</span> <span class="n">used</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_names</span><span class="p">;</span>             <span class="o">/*</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">strings</span> <span class="p">(</span><span class="n">names</span> <span class="n">used</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_varnames</span><span class="p">;</span>  <span class="o">/*</span> <span class="nb">tuple</span> <span class="n">of</span> <span class="n">strings</span> <span class="p">(</span><span class="n">local</span> <span class="n">variable</span> <span class="n">names</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_freevars</span><span class="p">;</span>  <span class="o">/*</span> <span class="nb">tuple</span> <span class="n">of</span> <span class="n">strings</span> <span class="p">(</span><span class="n">free</span> <span class="n">variable</span> <span class="n">names</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_cellvars</span><span class="p">;</span>      <span class="o">/*</span> <span class="nb">tuple</span> <span class="n">of</span> <span class="n">strings</span> <span class="p">(</span><span class="n">cell</span> <span class="n">variable</span> <span class="n">names</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="o">/*</span> <span class="n">The</span> <span class="n">rest</span> <span class="n">aren</span><span class="s1">&#39;t used in either hash or comparisons, except for</span>
+    <span class="n">co_name</span> <span class="p">(</span><span class="n">used</span> <span class="ow">in</span> <span class="n">both</span><span class="p">)</span> <span class="ow">and</span> <span class="n">co_firstlineno</span> <span class="p">(</span><span class="n">used</span> <span class="n">only</span> <span class="ow">in</span>
+    <span class="n">comparisons</span><span class="p">)</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">done</span> <span class="n">to</span> <span class="n">preserve</span> <span class="n">the</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">line</span> <span class="n">number</span>
+    <span class="k">for</span> <span class="n">tracebacks</span> <span class="ow">and</span> <span class="n">debuggers</span><span class="p">;</span> <span class="n">otherwise</span><span class="p">,</span> <span class="n">constant</span> <span class="n">de</span><span class="o">-</span><span class="n">duplication</span>
+    <span class="n">would</span> <span class="n">collapse</span> <span class="n">identical</span> <span class="n">functions</span><span class="o">/</span><span class="n">lambdas</span> <span class="n">defined</span> <span class="n">on</span> <span class="n">different</span> <span class="n">lines</span><span class="o">.</span>
+    <span class="o">*/</span>
+    <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">co_cell2arg</span><span class="p">;</span> <span class="o">/*</span> <span class="n">Maps</span> <span class="n">cell</span> <span class="nb">vars</span> <span class="n">which</span> <span class="n">are</span> <span class="n">arguments</span><span class="o">.</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_filename</span><span class="p">;</span>  <span class="o">/*</span> <span class="n">unicode</span> <span class="p">(</span><span class="n">where</span> <span class="n">it</span> <span class="n">was</span> <span class="n">loaded</span> <span class="n">from</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_name</span><span class="p">;</span>              <span class="o">/*</span> <span class="n">unicode</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="k">for</span> <span class="n">reference</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="nb">int</span> <span class="n">co_firstlineno</span><span class="p">;</span>             <span class="o">/*</span> <span class="n">first</span> <span class="n">source</span> <span class="n">line</span> <span class="n">number</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_lnotab</span><span class="p">;</span>    <span class="o">/*</span> <span class="n">string</span> <span class="p">(</span><span class="n">encoding</span> <span class="n">addr</span><span class="o">&lt;-&gt;</span><span class="n">lineno</span> <span class="n">mapping</span><span class="p">)</span> <span class="n">See</span>
+                <span class="n">Objects</span><span class="o">/</span><span class="n">lnotab_notes</span><span class="o">.</span><span class="n">txt</span> <span class="k">for</span> <span class="n">details</span><span class="o">.</span> <span class="o">*/</span>
+    <span class="n">void</span> <span class="o">*</span><span class="n">co_zombieframe</span><span class="p">;</span>     <span class="o">/*</span> <span class="k">for</span> <span class="n">optimization</span> <span class="n">only</span> <span class="p">(</span><span class="n">see</span> <span class="n">frameobject</span><span class="o">.</span><span class="n">c</span><span class="p">)</span> <span class="o">*/</span>
+    <span class="n">PyObject</span> <span class="o">*</span><span class="n">co_weakreflist</span><span class="p">;</span>   <span class="o">/*</span> <span class="n">to</span> <span class="n">support</span> <span class="n">weakrefs</span> <span class="n">to</span> <span class="n">code</span> <span class="n">objects</span> <span class="o">*/</span>
+<span class="p">}</span> <span class="n">PyCodeObject</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>属性对应如下：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">属性</th>
+<th class="head">作用</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>co_code</td>
+<td>字节码指令序列</td>
+</tr>
+<tr class="row-odd"><td>co_consts</td>
+<td>常量列表</td>
+</tr>
+<tr class="row-even"><td>co_names</td>
+<td>符号序列</td>
+</tr>
+<tr class="row-odd"><td>llll</td>
+<td>llllll</td>
+</tr>
+</tbody>
+</table>
+<p>接着上面的例子，查看 <code class="docutils literal"><span class="pre">co_code</span></code>，字节码是以 <code class="docutils literal"><span class="pre">byte</span></code> 字符串的形式存在。通过查找 <a class="reference external" href="http://www.ascii-code.com/">asciitable</a> 可以看到不同的指令的含义。</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">83</span><span class="p">]</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span>
+<span class="p">[</span><span class="s1">&#39;0x65&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x6a&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x1&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x1&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x64&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x0&#39;</span><span class="p">,</span>
+<span class="s1">&#39;0x53&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/python/cpython/blob/master/Include/opcode.h">opcode.h</a> 中可以找到指令对应的定义，比如上面看到 <code class="docutils literal"><span class="pre">101</span></code> 对应 <a class="reference external" href="https://github.com/python/cpython/blob/master/Include/opcode.h#L78">LOAD_NAME</a></p>
+<p>利用 <code class="docutils literal"><span class="pre">Python</span></code> 提供的 <code class="docutils literal"><span class="pre">dis</span></code> 可以验证刚刚看到的指令。</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ python3 -m dis test.py
+1           0 LOAD_CONST               0 (1)
+            3 STORE_NAME               0 (a)
+
+2           6 LOAD_CONST               1 (2)
+            9 STORE_NAME               1 (b)
+
+3           12 LOAD_NAME                2 (print)
+            15 LOAD_NAME                0 (a)
+            18 LOAD_NAME                1 (b)
+            21 BINARY_ADD
+            22 CALL_FUNCTION            1 (1 positional, 0 keyword pair)
+            25 POP_TOP
+            26 LOAD_CONST               2 (None)
+            29 RETURN_VALUE
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../tools/index.html" class="btn btn-neutral float-right" title="Tools" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SunisDown.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
