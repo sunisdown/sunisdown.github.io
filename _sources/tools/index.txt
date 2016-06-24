@@ -6,6 +6,7 @@ Tools
 Contents:
 
 .. toctree::
+   emacs/index
    :glob:
 
    *
