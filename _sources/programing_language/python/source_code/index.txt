@@ -11,7 +11,7 @@ Source Code of Python
 .. code:: python
 
           x = 1
-          y = 3
+          y = 2
           print(x + y)
 
 
@@ -20,13 +20,6 @@ Source Code of Python
 .. code:: python
 
           In [2]: c = compile('test.py', 'test.py', 'exec')
-
-          In [3]: c.
-          c.co_argcount        c.co_code            c.co_filename        c.co_flags           c.co_kwonlyargcount  c.co_name            c.co_nlocals         c.co_varnames
-          c.co_cellvars        c.co_consts          c.co_firstlineno     c.co_freevars        c.co_lnotab          c.co_names           c.co_stacksize
-
-          In [3]: c.co_co
-          c.co_code    c.co_consts
 
           In [3]: c.co_code
           Out[3]: b'e\x00\x00j\x01\x00\x01d\x00\x00S'
@@ -129,6 +122,7 @@ opcode.h_ 中可以找到指令对应的定义，比如上面看到 ``101`` 对�
                 25 POP_TOP
                 26 LOAD_CONST               2 (None)
                 29 RETURN_VALUE
+
 
 .. _code.h: https://github.com/python/cpython/blob/master/Include/code.h#L10
 .. _asciitable:  http://www.ascii-code.com/

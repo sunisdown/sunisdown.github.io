@@ -150,19 +150,12 @@
 <h2>解释器与 opcode<a class="headerlink" href="#opcode" title="Permalink to this headline">¶</a></h2>
 <p>先创建一个 <code class="docutils literal"><span class="pre">test.py</span></code> 文件。</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>在 <code class="docutils literal"><span class="pre">IPython</span></code> 中查看</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span>
-<span class="n">c</span><span class="o">.</span><span class="n">co_argcount</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>            <span class="n">c</span><span class="o">.</span><span class="n">co_filename</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_flags</span>           <span class="n">c</span><span class="o">.</span><span class="n">co_kwonlyargcount</span>  <span class="n">c</span><span class="o">.</span><span class="n">co_name</span>            <span class="n">c</span><span class="o">.</span><span class="n">co_nlocals</span>         <span class="n">c</span><span class="o">.</span><span class="n">co_varnames</span>
-<span class="n">c</span><span class="o">.</span><span class="n">co_cellvars</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_consts</span>          <span class="n">c</span><span class="o">.</span><span class="n">co_firstlineno</span>     <span class="n">c</span><span class="o">.</span><span class="n">co_freevars</span>        <span class="n">c</span><span class="o">.</span><span class="n">co_lnotab</span>          <span class="n">c</span><span class="o">.</span><span class="n">co_names</span>           <span class="n">c</span><span class="o">.</span><span class="n">co_stacksize</span>
-
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_co</span>
-<span class="n">c</span><span class="o">.</span><span class="n">co_code</span>    <span class="n">c</span><span class="o">.</span><span class="n">co_consts</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
