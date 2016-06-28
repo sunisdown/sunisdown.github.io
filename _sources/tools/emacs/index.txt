@@ -3,8 +3,11 @@ Emacs: The Editor of God's
 *****************************
 
 
-Splitting Windowns
+多窗格（MULTIPLE WINDOWS）
 ====================================
+
+Splitting Windowns
+--------------------
 
 C-x 2
 
@@ -13,3 +16,8 @@ C-x 2
 C-x 3
 
     在当前窗口的左边分一个窗口
+
+
+C-x 0
+
+    杀死当前窗口

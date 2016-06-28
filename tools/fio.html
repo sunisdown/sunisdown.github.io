@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tools &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  <title>fio &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Emacs: The Editor of God’s" href="emacs/index.html"/>
-        <link rel="prev" title="Go 错误处理" href="../programing_language/go/errors/index.html"/> 
+        <link rel="up" title="Tools" href="index.html"/>
+        <link rel="next" title="GDB" href="gdb.html"/>
+        <link rel="prev" title="Emacs: The Editor of God’s" href="emacs/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,9 +84,12 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tools</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="emacs/index.html">Emacs: The Editor of God&#8217;s</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fio.html">fio</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">随机读</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="gdb.html">GDB</a></li>
 </ul>
 </li>
@@ -120,11 +124,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Tools</li>
+          <li><a href="index.html">Tools</a> &raquo;</li>
+      
+    <li>fio</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/tools/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/tools/fio.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -134,46 +140,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tools">
-<h1>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h1>
-<p>一些常用的工具</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="emacs/index.html">Emacs: The Editor of God&#8217;s</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emacs/index.html#multiple-windows">多窗格（MULTIPLE WINDOWS）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emacs/index.html#splitting-windowns">Splitting Windowns</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="fio.html">fio</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="fio.html#id1">随机读</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gdb.html">GDB</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id1">启动 GDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id2">设置断点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id3">运行</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id4">显示栈帧</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="gdb.html#id5">显示所有栈帧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gdb.html#n">显示前 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gdb.html#id6">显示最后 <code class="docutils literal"><span class="pre">N</span></code> 个栈帧</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gdb.html#id7">显示局部变量与栈帧</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id8">显示变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id9">显示寄存器</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id10">单步调试</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id11">监视点</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#id12">改变变量的值</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gdb.html#attach">attach 到进程</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="gdb.html#id13">保存历史记录：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="fio">
+<h1>fio<a class="headerlink" href="#fio" title="Permalink to this headline">¶</a></h1>
+<p>磁盘测试工具，可以拿来测试磁盘的随机读写性能。地址 <a class="reference external" href="https://github.com/axboe/fio/blob/master/HOWTO">fio</a></p>
+<p>里面有很多参数可以调整，可以通过命令行参数的形式来启动，也可以指定一个配置文件。</p>
+<div class="section" id="id1">
+<h2>随机读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>比如我想测硬盘的随机读的性能, 可以用下面的配置 <code class="docutils literal"><span class="pre">random-read-test.fio</span></code></p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">random</span><span class="o">-</span><span class="n">read</span><span class="p">]</span>
+<span class="n">rw</span><span class="o">=</span><span class="n">randread</span>
+<span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="n">G</span>
+<span class="n">directory</span><span class="o">=/</span><span class="n">data1</span><span class="o">/</span><span class="n">readtest</span>
+<span class="n">iodepth</span><span class="o">=</span><span class="mi">16</span>
+<span class="n">bs</span><span class="o">=</span><span class="mi">500</span><span class="n">B</span>
+<span class="n">thread</span>
+<span class="n">runtime</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">numjobs</span><span class="o">=</span><span class="mi">16</span>
+<span class="n">rate_iops</span><span class="o">=</span><span class="mi">22</span>
+</pre></div>
+</div>
+<p>然后执行:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">fio</span> <span class="o">./</span><span class="n">random</span><span class="o">-</span><span class="n">read</span><span class="o">-</span><span class="n">test</span><span class="o">.</span><span class="n">fio</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -184,10 +173,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="emacs/index.html" class="btn btn-neutral float-right" title="Emacs: The Editor of God’s" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gdb.html" class="btn btn-neutral float-right" title="GDB" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../programing_language/go/errors/index.html" class="btn btn-neutral" title="Go 错误处理" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="emacs/index.html" class="btn btn-neutral" title="Emacs: The Editor of God’s" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
