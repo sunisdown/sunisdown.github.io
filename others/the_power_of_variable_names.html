@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>如何取一个好的变量名 &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Others" href="index.html"/>
+        <link rel="prev" title="Minimize Filesystem Caching Effects" href="nocache.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SunisDown's NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Others</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="beansdb.html">GoBeansDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="beansdbproxy.html">Proxy 调度优化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column.html">Column Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">如何取一个好的变量名</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">选择好的变量名</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">准确的表述变量代表的事物</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">合适的长度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">变量名中的计算值限定词</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">变量名中的对仗词</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">特定类型的命名</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">命名循环下标</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">命名状态变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">命名临时变量</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">命名布尔值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">SunisDown's NoteBook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Others</a> &raquo;</li>
+      
+    <li>如何取一个好的变量名</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/others/the_power_of_variable_names.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>如何取一个好的变量名<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>当我写一个需要长期维护的项目时，取变量名变成一个非常重要的事。尤其是同事拿着代码看不懂其中的含义，需要再解释一遍的时候。
+如何取一个优雅的变量名，应该是很多小伙伴都头疼的问题。
+变量又不是狗，我们不能觉得这个名字可爱，那个名字酷，叫起来方便就直接按上，之所以绞尽脑汁想一个变量名，无非是为了让小伙伴们阅读起来更加方便。
+一个好的变量名应该是可读的，而不是需要让别人在阅读自己代码的时候需要通过上下文来判断这个变量代表什么含义。
+一个好的变量名应该也是容易记住的，这样别人在阅读代码的时候可以大概知道这个变量在前面用过。</p>
+<div class="section" id="id2">
+<h2>选择好的变量名<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>准确的表述变量代表的事物<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>这个要求并不简单，尤其是对于母语不是英文的人来说，比如我。
+这也是我在取变量名的时候遇见的最大的问题。</p>
+<p>一些比较好的例子如下：</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">customerID</span><span class="o">/</span><span class="n">pageCount</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>比较反人类的命名是直接用 a/b/c 这些没有含义的字符来作为名字。</p>
+</div>
+<div class="section" id="id4">
+<h3>合适的长度<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>一个优雅的变量名不应该太长，比如我要取一个变量名来代表 豆瓣核心系统的软件工程师 这个事物，</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">softwareEngineerAtDouban</span>
+</pre></div>
+</div>
+<p>理想情况下变量名长度应该在 10 到 16个字符之间，放宽要求可以控制在 8 到 20 个字符之间。 变量名太短可能会导致无法传达足够的信息
+变量名太长写起来麻烦，而且会让代码的视觉结构不那么清晰。</p>
+</div>
+<div class="section" id="id5">
+<h3>变量名中的计算值限定词<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Total Sum Average Max String Record 这种限定词放在变量名的最后。</p>
+<p>优点：</p>
+<p>变量名最重要的含义部分，应该放在最前面。
+统一规则之后，可以避免 totalRevenue 合 revenueTotal 这种有歧义的变量名。</p>
+<p>一致性可以提高可读性，简化维护工作。</p>
+</div>
+<div class="section" id="id6">
+<h3>变量名中的对仗词<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">begin</span><span class="o">/</span><span class="n">end</span>
+<span class="n">first</span><span class="o">/</span><span class="n">last</span>
+<span class="n">locked</span><span class="o">/</span><span class="n">unlocked</span>
+<span class="nb">min</span><span class="o">/</span><span class="nb">max</span>
+<span class="nb">next</span><span class="o">/</span><span class="n">previous</span>
+<span class="n">old</span><span class="o">/</span><span class="n">new</span>
+<span class="n">opened</span><span class="o">/</span><span class="n">closed</span>
+<span class="n">visible</span><span class="o">/</span><span class="n">invisible</span>
+<span class="n">source</span><span class="o">/</span><span class="n">target</span>
+<span class="n">source</span><span class="o">/</span><span class="n">destination</span>
+<span class="n">up</span><span class="o">/</span><span class="n">down</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>特定类型的命名<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>命名循环下标<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>如 i j k 这些可以放在简单的循环里面，但是还是建议取有意义的名字。</p>
+</div>
+<div class="section" id="id9">
+<h3>命名状态变量<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>如果你在猜测某段代码的含义，就应该考虑重新命名。</p>
+</div>
+<div class="section" id="id10">
+<h3>命名临时变量<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>临时变量用户存储计算的中间结果，作为临时占位符，以及存储内存管理值（housekeeping）</p>
+<p>不要因为变量是临时的就随意的命名。</p>
+</div>
+<div class="section" id="id11">
+<h3>命名布尔值<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>类似于 <cite>done</cite> <cite>error</cite> <cite>found</cite> <cite>success</cite> 这些是好的布尔值变量。但是 <cite>status</cite> 就不是一个好的名字。</p>
+<p>使用肯定的布尔值变量名，notFound notdone notSuccessful 这些不是好的变量名</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="nocache.html" class="btn btn-neutral" title="Minimize Filesystem Caching Effects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SunisDown.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
