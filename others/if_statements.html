@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Others &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  <title>IF 语句 &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="GoBeansDB" href="beansdb.html"/>
-        <link rel="prev" title="GDB" href="../tools/gdb.html"/> 
+        <link rel="up" title="Others" href="index.html"/>
+        <link rel="next" title="Minimize Filesystem Caching Effects" href="nocache.html"/>
+        <link rel="prev" title="Column Store" href="column.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +85,11 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Others</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Others</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="beansdb.html">GoBeansDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="column.html">Column Store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IF 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a></li>
 </ul>
@@ -123,11 +124,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Others</li>
+          <li><a href="index.html">Others</a> &raquo;</li>
+      
+    <li>IF 语句</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/others/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/others/if_statements.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -137,49 +140,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="others">
-<h1>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h1>
-<p>其他，零零散散</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="beansdb.html">GoBeansDB</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#why">Why</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#note">NOTE</a></li>
+  <div class="section" id="if">
+<h1>IF 语句<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h1>
+<p>如何写好代码是永不过时的话题，if 作为代码中不可缺少的部分，也是将代码写优雅必须要掌握的。</p>
+<p>在写 if 语句的时候，通常遵循一下原则：</p>
+<ul class="simple">
+<li>首先写常见的情况，在处理补常见的。
+常见情况的代码清晰，代码可读性要高</li>
+<li>确保等量分支正确
+类似 &gt; &gt;= 混用的情况</li>
+<li>正常的情况放在 if 的后面，异常情况放在 else 后面。</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
-<li class="toctree-l1"><a class="reference internal" href="column.html">Column Store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="column.html#row">Row</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#column">Column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#cpu">利用 CPU 缓存</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id2">选择好的变量名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id3">准确的表述变量代表的事物</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id4">合适的长度</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id5">变量名中的计算值限定词</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id6">变量名中的对仗词</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id7">特定类型的命名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id8">命名循环下标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id9">命名状态变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id10">命名临时变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id11">命名布尔值</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<div class="code go highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">ifSuccess</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">do</span> <span class="n">something</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">do</span> <span class="n">something</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+<ul class="simple">
+<li>if 子句后面应该有意义</li>
+</ul>
+<div class="code go highlight-default"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Success</span> <span class="p">{</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="o">//</span> <span class="n">do</span> <span class="n">something</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>上面例子里面，if 的子句里面没有任何逻辑，这种代码看起来有点怪，可以修改成</p>
+<div class="code go highlight-default"><div class="highlight"><pre><span></span>if !Success {
+// do something
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li>考虑 else 子句</li>
+</ul>
+<p>上面的例子里面只写了 if 语句，后面并没有跟 else，这种情况下需要确认自己是否考虑周全，并且在注释里面说明为什么没有 else 语句</p>
 </div>
 
 
@@ -189,10 +186,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="beansdb.html" class="btn btn-neutral float-right" title="GoBeansDB" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nocache.html" class="btn btn-neutral float-right" title="Minimize Filesystem Caching Effects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../tools/gdb.html" class="btn btn-neutral" title="GDB" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="column.html" class="btn btn-neutral" title="Column Store" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
