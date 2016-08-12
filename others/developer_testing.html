@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Others &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  <title>Developer Testing &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,9 @@
 
   
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="GoBeansDB" href="beansdb.html"/>
-        <link rel="prev" title="GDB" href="../tools/gdb.html"/> 
+        <link rel="up" title="Others" href="index.html"/>
+        <link rel="next" title="IF 语句" href="if_statements.html"/>
+        <link rel="prev" title="Column Store" href="column.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,11 +85,15 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Others</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Others</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="beansdb.html">GoBeansDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="column.html">Column Store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_testing.html">Developer Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Developer Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tdd">TDD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limitations-of-developer-testing">Limitations of Developer Testing</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a></li>
@@ -124,11 +129,13 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Others</li>
+          <li><a href="index.html">Others</a> &raquo;</li>
+      
+    <li>Developer Testing</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/others/index.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/others/developer_testing.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -138,52 +145,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="others">
-<h1>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h1>
-<p>其他，零零散散</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="beansdb.html">GoBeansDB</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#why">Why</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#note">NOTE</a></li>
+  <div class="section" id="developer-testing">
+<h1>Developer Testing<a class="headerlink" href="#developer-testing" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>单元测试(Unit test) 小段程序，从系统中隔离出来单独测试。可能是一个类，一个小程序</li>
+<li>组件测试(Component test) 类，包从完整的系统中隔离出来做测试</li>
+<li>集成测试(Integration test) 多个类，包，组件，或者子系统进行联合测试。这种测试应该越早进行越好，两个类可以集成测试就尽快测试</li>
+<li>回归测试(Regression test) 重复之前的测试用例</li>
+<li>系统测试(System test) 运行整个软件进行测试</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
-<li class="toctree-l1"><a class="reference internal" href="column.html">Column Store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="column.html#row">Row</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#column">Column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#cpu">利用 CPU 缓存</a></li>
+<p>一个项目规模越大，真正写代码的时间占比会减少。而架构，测试，集成占用的时间比例会增长。</p>
+<p>开发人员测试软件的要点：</p>
+<ul class="simple">
+<li>对需求测试，确保需求完成。这部分测试用例应该在开始写代码直接就写好测试用例。</li>
+<li>对架构的关注点测试，确保架构被实现。 这些测试也应该先于代码实现。</li>
+<li>基础测试</li>
+<li>使用检测表，记录在这个项目中犯过的错误。</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="developer_testing.html">Developer Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developer_testing.html#tdd">TDD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_testing.html#limitations-of-developer-testing">Limitations of Developer Testing</a></li>
+<div class="section" id="tdd">
+<h2>TDD<a class="headerlink" href="#tdd" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>先写测试，可以将引入去缺陷到发现并排除权限直接的时间缩减至最短。</li>
+<li>先写测试或者后写测试，在写测试这上面花的时间一样多。</li>
+<li>先写测试，更容易发现BUG，也更容易修复BUG</li>
+<li>先写测试，会强迫你先考虑需求与架构设计，这样对于自己的成长更好，也容易写出优质的代码。</li>
+<li>先写测试，可以暴露不合理的需求，一个烂需求，没有办法很好的实现功能测试</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id2">选择好的变量名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id3">准确的表述变量代表的事物</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id4">合适的长度</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id5">变量名中的计算值限定词</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id6">变量名中的对仗词</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id7">特定类型的命名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id8">命名循环下标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id9">命名状态变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id10">命名临时变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id11">命名布尔值</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<p>** 测试很好，但测试不是万能的 **</p>
+</div>
+<div class="section" id="limitations-of-developer-testing">
+<h2>Limitations of Developer Testing<a class="headerlink" href="#limitations-of-developer-testing" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>clean tests 开发人员通常只会写让代码正常运行的测试，比如用正常的数据来做测试，而不是拿脏数据来测试</li>
+<li>100% 的覆盖率不代表测试到位</li>
 </ul>
 </div>
 </div>
@@ -195,10 +189,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="beansdb.html" class="btn btn-neutral float-right" title="GoBeansDB" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="if_statements.html" class="btn btn-neutral float-right" title="IF 语句" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../tools/gdb.html" class="btn btn-neutral" title="GDB" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="column.html" class="btn btn-neutral" title="Column Store" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
