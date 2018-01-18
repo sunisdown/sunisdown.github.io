@@ -36,7 +36,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="clickhouse" href="clickhouse.html"/>
+        <link rel="next" title="Table engines" href="clickhouse.html"/>
         <link rel="prev" title="如何取一个好的变量名" href="../others/the_power_of_variable_names.html"/> 
 
   
@@ -95,13 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Distributed System</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="clickhouse.html">clickhouse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#tinylog">TinyLog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#memory">Memory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#distirbuted">Distirbuted</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kv_store.html">为什么要自己实现一套 k/v 存储</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kv_store.html#go-beansdb">为什么要用 Go 重新实现 BeansDB</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kv_store.html#gobeansdb">GoBeansDB 的架构设计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clickhouse.html">Table engines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kv_store.html">GoBeansDB 架构设计(1)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mesos_chronos.html">Chronos On mesos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="novel_erasure_codes.html">Novel Erasure Codes for Big Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reliable_scalable_maintainable.html">Reliable, Scalable and Maintainable</a></li>
@@ -177,14 +172,20 @@
 Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="clickhouse.html">clickhouse</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clickhouse.html#tinylog">TinyLog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clickhouse.html#memory">Memory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clickhouse.html#distirbuted">Distirbuted</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kv_store.html">为什么要自己实现一套 k/v 存储</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kv_store.html#go-beansdb">为什么要用 Go 重新实现 BeansDB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kv_store.html#gobeansdb">GoBeansDB 的架构设计</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kv_store.html#gc">GC 操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clickhouse.html">Table engines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#clickhouse">clickhouse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#tinylog">TinyLog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#memory">Memory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clickhouse.html#distirbuted">Distirbuted</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kv_store.html">GoBeansDB 架构设计(1)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kv_store.html#k-v">为什么要自己实现一套 k/v 存储</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kv_store.html#go-beansdb">为什么要用 Go 重新实现 BeansDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kv_store.html#gobeansdb">GoBeansDB 的架构设计</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kv_store.html#gc">GC 操作</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mesos_chronos.html">Chronos On mesos</a><ul>
@@ -221,7 +222,7 @@ Contents:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="clickhouse.html" class="btn btn-neutral float-right" title="clickhouse" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="clickhouse.html" class="btn btn-neutral float-right" title="Table engines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../others/the_power_of_variable_names.html" class="btn btn-neutral" title="如何取一个好的变量名" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
