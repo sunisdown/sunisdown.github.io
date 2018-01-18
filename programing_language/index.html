@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
         <link rel="next" title="Python" href="python/index.html"/>
         <link rel="prev" title="Welcome to SunisDown’s NoteBook’s documentation!" href="../index.html"/> 
@@ -41,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -81,14 +87,20 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Programming language</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/data_model.html">Python 的 Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/metaprograming.html">MetaPrograming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go/index.html">Go</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../distributed_system/index.html">Distributed System</a></li>
 </ul>
 
             
@@ -101,8 +113,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">SunisDown's NoteBook</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunisDown's NoteBook</a>
+        
       </nav>
 
 
@@ -111,23 +125,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>Programming language</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Programming language</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/programing_language/index.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/programing_language/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -144,6 +175,22 @@ Contents:</p>
 <li class="toctree-l3"><a class="reference internal" href="python/source_code/index.html#opcode">解释器与 opcode</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/data_model.html">Python 的 Data Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/metaprograming.html">MetaPrograming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python/fluent_python/metaprograming.html#class-metaprograming">Class Metaprograming</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="python/fluent_python/metaprograming.html#a-class-factory">A Class Factory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python/fluent_python/data_model.html">Python 的 Data Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/fluent_python/metaprograming.html">MetaPrograming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/metaprograming.html#class-metaprograming">Class Metaprograming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python/fluent_python/metaprograming.html#a-class-factory">A Class Factory</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="go/index.html">Go</a><ul>
@@ -156,15 +203,18 @@ Contents:</p>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to SunisDown’s NoteBook’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to SunisDown’s NoteBook’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -198,7 +248,8 @@ Contents:</p>
             VERSION:'0.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>

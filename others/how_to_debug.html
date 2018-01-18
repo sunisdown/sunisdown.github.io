@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>DEBUGING &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Others" href="index.html"/>
+        <link rel="next" title="IF 语句" href="if_statements.html"/>
+        <link rel="prev" title="Developer Testing" href="developer_testing.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SunisDown's NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Others</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="beansdb.html">GoBeansDB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="column.html">Column Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer_testing.html">Developer Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DEBUGING</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">寻找缺陷</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">科学的调试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunisDown's NoteBook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Others</a> &raquo;</li>
+        
+      <li>DEBUGING</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/others/how_to_debug.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="debuging">
+<h1>DEBUGING<a class="headerlink" href="#debuging" title="Permalink to this headline">¶</a></h1>
+<p>调试可能会占到开发周期的 50%，懂调试的工程师可能只需要花普通工程师1/3的时间来做调试工作。</p>
+<div class="section" id="id1">
+<h2>寻找缺陷<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>科学的调试<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>通过可重复的实验收集数据</li>
+<li>根据相关数据设计构造一个假说</li>
+<li>设计一个实验来证明或者反证这个假说</li>
+<li>证明或者反证假说</li>
+<li>根据需要重复上面的步骤</li>
+</ol>
+<p>上面是大概的步骤</p>
+<p>下面是方法</p>
+<dl class="docutils">
+<dt>将错误的状态文档下来</dt>
+<dd>如果一个BUG只是时不时的出现，那几乎没有可能找出产生BUG的原因。能够让BUG稳定的复现是工作中比较有挑战的事情。</dd>
+</dl>
+<ol class="arabic simple" start="2">
+<li>确定错误的来源（也就是那个Error/Fault）
+a. 收集产生缺陷的相关数据
+b. 分析所收集的数据，并构造对去缺陷的假设
+c. 确定怎样去证实或者证伪这个假设。比如通过测试或者通过检查代码
+d. 按照 2-c 的方法对假设作出结论</li>
+<li>修补缺陷</li>
+<li>对修补的地方进行测试</li>
+<li>查找是否有类似的错误</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="if_statements.html" class="btn btn-neutral float-right" title="IF 语句" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="developer_testing.html" class="btn btn-neutral" title="Developer Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SunisDown.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

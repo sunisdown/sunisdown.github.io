@@ -1,0 +1,130 @@
+Source Code of Python
+====================================
+
+人生苦短，我用Python
+
+解释器与 opcode
+------------------
+
+先创建一个 ``test.py`` 文件。
+
+.. code:: python
+
+          x = 1
+          y = 2
+          print(x + y)
+
+
+在 ``IPython`` 中查看
+
+.. code:: python
+
+          In [2]: c = compile('test.py', 'test.py', 'exec')
+
+          In [3]: c.co_code
+          Out[3]: b'e\x00\x00j\x01\x00\x01d\x00\x00S'
+
+
+从 ``IPython`` 中可以看到，``c`` 有很多属性，这些属性都定义在 code.h_ 里：
+
+.. code:: c
+
+    /* Bytecode object */
+    typedef struct {
+        PyObject_HEAD
+        int co_argcount;		/* #arguments, except *args */
+        int co_kwonlyargcount;	/* #keyword only arguments */
+        int co_nlocals;		/* #local variables */
+        int co_stacksize;		/* #entries needed for evaluation stack */
+        int co_flags;		/* CO_..., see below */
+        PyObject *co_code;		/* instruction opcodes */
+        PyObject *co_consts;	/* list (constants used) */
+        PyObject *co_names;		/* list of strings (names used) */
+        PyObject *co_varnames;	/* tuple of strings (local variable names) */
+        PyObject *co_freevars;	/* tuple of strings (free variable names) */
+        PyObject *co_cellvars;      /* tuple of strings (cell variable names) */
+        /* The rest aren't used in either hash or comparisons, except for
+        co_name (used in both) and co_firstlineno (used only in
+        comparisons).  This is done to preserve the name and line number
+        for tracebacks and debuggers; otherwise, constant de-duplication
+        would collapse identical functions/lambdas defined on different lines.
+        */
+        unsigned char *co_cell2arg; /* Maps cell vars which are arguments. */
+        PyObject *co_filename;	/* unicode (where it was loaded from) */
+        PyObject *co_name;		/* unicode (name, for reference) */
+        int co_firstlineno;		/* first source line number */
+        PyObject *co_lnotab;	/* string (encoding addr<->lineno mapping) See
+                    Objects/lnotab_notes.txt for details. */
+        void *co_zombieframe;     /* for optimization only (see frameobject.c) */
+        PyObject *co_weakreflist;   /* to support weakrefs to code objects */
+    } PyCodeObject;
+
+
+属性对应如下：
+
+
++----------------+-----------------------------------------------------+
+| 属性           |  作用                                               |
++================+=====================================================+
+| co_code        |  字节码指令序列                                     |
++----------------+-----------------------------------------------------+
+| co_consts      |  常量列表                                           |
++----------------+-----------------------------------------------------+
+| co_names       |  符号序列                                           |
++----------------+-----------------------------------------------------+
+| llll           |  llllll                                             |
++----------------+-----------------------------------------------------+
+
+
+接着上面的例子，查看 ``co_code``，字节码是以 ``byte`` 字符串的形式存在。通过查找 asciitable_ 可以看到不同的指令的含义。
+
+.. code:: python
+
+    In [3]: c.co_code
+    Out[3]: b'e\x00\x00j\x01\x00\x01d\x00\x00S'
+
+    In [4]: [i for i in c.co_code]
+    Out[4]: [101, 0, 0, 106, 1, 0, 1, 100, 0, 0, 83]
+
+    In [5]: [hex(i) for i in c.co_code]
+    Out[5]:
+    ['0x65',
+    '0x0',
+    '0x0',
+    '0x6a',
+    '0x1',
+    '0x0',
+    '0x1',
+    '0x64',
+    '0x0',
+    '0x0',
+    '0x53']
+
+
+opcode.h_ 中可以找到指令对应的定义，比如上面看到 ``101`` 对应 LOAD_NAME_
+
+利用 ``Python`` 提供的 ``dis`` 可以验证刚刚看到的指令。
+
+.. code:: bash
+
+    $ python3 -m dis test.py
+    1           0 LOAD_CONST               0 (1)
+                3 STORE_NAME               0 (a)
+
+    2           6 LOAD_CONST               1 (2)
+                9 STORE_NAME               1 (b)
+
+    3           12 LOAD_NAME                2 (print)
+                15 LOAD_NAME                0 (a)
+                18 LOAD_NAME                1 (b)
+                21 BINARY_ADD
+                22 CALL_FUNCTION            1 (1 positional, 0 keyword pair)
+                25 POP_TOP
+                26 LOAD_CONST               2 (None)
+                29 RETURN_VALUE
+
+
+.. _code.h: https://github.com/python/cpython/blob/master/Include/code.h#L10
+.. _asciitable:  http://www.ascii-code.com/
+.. _opcode.h: https://github.com/python/cpython/blob/master/Include/opcode.h
+.. _LOAD_NAME: https://github.com/python/cpython/blob/master/Include/opcode.h#L78

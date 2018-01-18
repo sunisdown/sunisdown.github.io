@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>clickhouse &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SunisDown's NoteBook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SunisDown's NoteBook</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>clickhouse</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/distributed_system/clickhouse.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <blockquote>
+<div>Table engines</div></blockquote>
+<hr class="docutils" />
+<div class="section" id="clickhouse">
+<h1>clickhouse<a class="headerlink" href="#clickhouse" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>数据是如何存储的</dt>
+<dd><ul class="first last">
+<li>怎么写入输入，怎么读取数据</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple">
+<li>支持哪些查询方式，是如何支持的</li>
+<li>并发的数据访问</li>
+<li>需要的时候设置索引</li>
+<li>多线程</li>
+<li>数据 replication</li>
+</ul>
+</div>
+<div class="section" id="tinylog">
+<h1>TinyLog<a class="headerlink" href="#tinylog" title="Permalink to this headline">¶</a></h1>
+<p>作为数据存放在磁盘上的引擎，TinyLog 属于最简单的那种。
+没一列数据都单独存储在一个压缩的文件里面。
+写入数据的时候，数据直接追加在文件的尾部。
+并发的访问有下面这些限制：
+1. 如果读写操作同时执行，读操作会报错
+2. 如果写并发，数据会出问题。
+推荐的做法是，写一次，然后在需要的时候反复的读。
+<cite>Queryies</cite> 操作是在单个执行流里面执行的，所以这个引擎是给小规模的数据量准备的，推荐是`1,000,000` 行。
+…
+处理小批量数据的时候，TinyLog 被拿来存储中间数据。</p>
+<p>## Log
+拿来放短期数据，一次性数据，测试</p>
+</div>
+<div class="section" id="memory">
+<h1>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h1>
+<p>拿来做测试，也可以拿来小规模数据的快速计算。推荐 100,000,000 行数据。
+系统会用</p>
+<p>## Merge</p>
+<p>本身不存储数据，但是可以同时从任意多个 <cite>table</cite> 里面读取数据。</p>
+</div>
+<div class="section" id="distirbuted">
+<h1>Distirbuted<a class="headerlink" href="#distirbuted" title="Permalink to this headline">¶</a></h1>
+<p><cite>Distributed engine</cite> 不存储数据，但是支持在多个服务器上做分布式查询。</p>
+<p><cite>Distiributed（calcs, default, hits[, sharding_key])</cite> 里面的参数分别是 <cite>集群名</cite> <cite>数据库名</cite>，<cite>表名</cite>, 以及一个可选的 <cite>sharding key</cite></p>
+<p><cite>clacs</cite> 是 集群名字
+<cite>default</cite> 是 database name
+<cite>hits</cite> 是 table name
+<cite>sharding key</cite> 是 sharding keys</p>
+<p>除了直接从 remote servers 上面直接读取数据之外，我们还可以利用 remote server 做一些处理。
+比如在执行一条含有`GROUP BY` 的查询语句时，数据会在 <cite>remote servers</cite> 上执行 <cite>aggr</cite> 操作，然后把执行 <cite>aggr</cite> 之后得到的中间结果作为响应返回给请求服务器，然后再做进一步的 <cite>aggr</cite>。</p>
+<p>你可以在多个 <cite>replicas</cite> 之间做 LB。</p>
+<p>想往集群里面写入数据时，同城有两种方法：</p>
+<p>1. 可以定义好哪些要在哪些服务器上面做数据写入。
+这是</p>
+<ol class="arabic simple" start="2">
+<li>？？？</li>
+</ol>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, SunisDown.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

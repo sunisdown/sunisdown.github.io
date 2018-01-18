@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -30,6 +32,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/>
         <link rel="up" title="Python" href="../index.html"/>
         <link rel="next" title="Go" href="../../go/index.html"/>
@@ -42,6 +47,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -82,7 +88,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming language</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Python</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Source Code of Python</a><ul>
@@ -108,8 +117,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../../index.html">SunisDown's NoteBook</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SunisDown's NoteBook</a>
+        
       </nav>
 
 
@@ -118,27 +129,44 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../../../index.html">Docs</a> &raquo;</li>
-      
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
           <li><a href="../../index.html">Programming language</a> &raquo;</li>
-      
+        
           <li><a href="../index.html">Python</a> &raquo;</li>
-      
-    <li>Source Code of Python</li>
+        
+      <li>Source Code of Python</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../../../_sources/programing_language/python/source_code/index.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../../../_sources/programing_language/python/source_code/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -159,7 +187,7 @@
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;test.py&#39;</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
 </pre></div>
 </div>
 <p>从 <code class="docutils literal"><span class="pre">IPython</span></code> 中可以看到，<code class="docutils literal"><span class="pre">c</span></code> 有很多属性，这些属性都定义在 <a class="reference external" href="https://github.com/python/cpython/blob/master/Include/code.h#L10">code.h</a> 里：</p>
@@ -222,7 +250,7 @@
 </table>
 <p>接着上面的例子，查看 <code class="docutils literal"><span class="pre">co_code</span></code>，字节码是以 <code class="docutils literal"><span class="pre">byte</span></code> 字符串的形式存在。通过查找 <a class="reference external" href="http://www.ascii-code.com/">asciitable</a> 可以看到不同的指令的含义。</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="sa">b</span><span class="s1">&#39;e</span><span class="se">\x00\x00</span><span class="s1">j</span><span class="se">\x01\x00\x01</span><span class="s1">d</span><span class="se">\x00\x00</span><span class="s1">S&#39;</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">co_code</span><span class="p">]</span>
 <span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">83</span><span class="p">]</span>
@@ -266,15 +294,18 @@
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../go/index.html" class="btn btn-neutral float-right" title="Go" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../go/index.html" class="btn btn-neutral float-right" title="Go" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -308,7 +339,8 @@
             VERSION:'0.0.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../../../_static/jquery.js"></script>
