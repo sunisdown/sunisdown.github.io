@@ -35,7 +35,9 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../index.html"/> 
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../index.html"/>
+        <link rel="up" title="Database" href="../index.html"/>
+        <link rel="prev" title="Database" href="../index.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -88,12 +90,18 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../programing_language/index.html">Programming language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../others/index.html">Others</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../distributed_system/index.html">Distributed System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Database</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Database</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MVCC Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rules">Rules</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -138,6 +146,8 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../index.html">Database</a> &raquo;</li>
+        
       <li>MVCC Rules</li>
     
     
@@ -159,6 +169,17 @@
             
   <div class="section" id="mvcc-rules">
 <h1>MVCC Rules<a class="headerlink" href="#mvcc-rules" title="Permalink to this headline">¶</a></h1>
+<p>From a performance point of view, readers should never block writers, and writers should never block readers.
+With this principle, database can handle long-running read queries at the same time as processing writes normally, without any lock contention between the two.</p>
+<div class="section" id="rules">
+<h2>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>At the start of each transaction, the database makes a list of all the other transactions that are in progress at that time. Any writes that those transactions have made are ignored, even if the transactions subsequently commit.</li>
+<li>Any writes made by aborted transacations are ignored.</li>
+<li>Any writes make by transacations with a later transacation ID(i.e., which started after the current transacation started) are ignored, regardless of whether those transacations have commited.</li>
+<li>All other writes are visible to the application’s queries.</li>
+</ol>
+</div>
 </div>
 
 
@@ -168,6 +189,13 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
