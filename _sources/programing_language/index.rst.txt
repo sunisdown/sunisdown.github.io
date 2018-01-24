@@ -7,6 +7,5 @@ Contents:
 .. toctree::
 
    python/index
-   python/fluent_python/data_model
-   python/fluent_python/metaprograming
    go/index
+   lisp/index
