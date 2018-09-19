@@ -6,6 +6,7 @@ Rust 函数
 Rust 函数的默认返回值有点诡异
 
 .. code:: rust
+
    fn foo(bar: i32) -> i32 {
       if bar > 10 {
           bar - 10

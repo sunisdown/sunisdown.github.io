@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/> 
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Rust" href="../index.html"/>
+        <link rel="next" title="Rust 函数" href="../function/index.html"/>
+        <link rel="prev" title="Rust" href="../index.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -88,8 +91,18 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Programming language</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming language</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lisp/index.html">Lisp</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Rust</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Rust 变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../function/index.html">Rust 函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../others/index.html">Others</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../distributed_system/index.html">Distributed System</a></li>
@@ -138,6 +151,10 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../../index.html">Programming language</a> &raquo;</li>
+        
+          <li><a href="../index.html">Rust</a> &raquo;</li>
+        
       <li>Rust 变量</li>
     
     
@@ -167,8 +184,18 @@
 </div>
 <p>用 let 来声明一个变量，可以显示的声明类型，也可以不直接初始化声明类型，但是需要注意的是，声明类型之后，必须要显式的初始化这个变量。
 比如这么做是错的</p>
+<div class="code rust highlight-default"><div class="highlight"><pre><span></span>let x: i32
+println!(x)
+</pre></div>
+</div>
 <p>错在没有初始化变量</p>
 <p>还有一点需要注意，Rust 里面变量是 <cite>immutable</cite> 的，如果想要赋一个新的值，就需要先把这个变量显示的声明为可变的，如下：</p>
+<div class="code rust highlight-default"><div class="highlight"><pre><span></span>let mut x = 2;
+println!(x)
+x=5;
+println!(x)
+</pre></div>
+</div>
 </div>
 
 
@@ -178,6 +205,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../function/index.html" class="btn btn-neutral float-right" title="Rust 函数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Rust" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

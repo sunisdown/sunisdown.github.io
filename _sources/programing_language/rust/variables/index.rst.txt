@@ -15,6 +15,7 @@ Rust 变量
 比如这么做是错的
 
 .. code:: rust
+
    let x: i32
    println!(x)
 
@@ -24,6 +25,7 @@ Rust 变量
 还有一点需要注意，Rust 里面变量是 `immutable` 的，如果想要赋一个新的值，就需要先把这个变量显示的声明为可变的，如下：
 
 .. code:: rust
+
    let mut x = 2;
    println!(x)
    x=5;

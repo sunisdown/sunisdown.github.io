@@ -35,7 +35,10 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/> 
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../../../index.html"/>
+        <link rel="up" title="Rust" href="../index.html"/>
+        <link rel="next" title="Tools" href="../../../tools/index.html"/>
+        <link rel="prev" title="Rust 变量" href="../variables/index.html"/> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
@@ -88,8 +91,18 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Programming language</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Programming language</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../go/index.html">Go</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lisp/index.html">Lisp</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Rust</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../variables/index.html">Rust 变量</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Rust 函数</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../others/index.html">Others</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../distributed_system/index.html">Distributed System</a></li>
@@ -138,6 +151,10 @@
     
       <li><a href="../../../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="../../index.html">Programming language</a> &raquo;</li>
+        
+          <li><a href="../index.html">Rust</a> &raquo;</li>
+        
       <li>Rust 函数</li>
     
     
@@ -160,6 +177,15 @@
   <div class="section" id="rust">
 <h1>Rust 函数<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h1>
 <p>Rust 函数的默认返回值有点诡异</p>
+<div class="code rust highlight-default"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="n">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">:</span> <span class="n">i32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">i32</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="n">bar</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">{</span>
+       <span class="n">bar</span> <span class="o">-</span> <span class="mi">10</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">bar</span> <span class="o">-</span><span class="mi">3</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>还有一个需要注意的是 <cite>expressions</cite> 和 <cite>statements</cite> 的区别，
 expressions 会有返回值， stattements 不会。</p>
 </div>
@@ -171,6 +197,15 @@ expressions 会有返回值， stattements 不会。</p>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../tools/index.html" class="btn btn-neutral float-right" title="Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../variables/index.html" class="btn btn-neutral" title="Rust 变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
