@@ -9,3 +9,4 @@ Contents:
    python/index
    go/index
    lisp/index
+   rust/index

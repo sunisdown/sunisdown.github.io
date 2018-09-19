@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Programming language &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  <title>Resource Allocation in Mesos &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
   
 
   
@@ -35,9 +35,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="Python" href="python/index.html"/>
-        <link rel="prev" title="Welcome to SunisDown’s NoteBook’s documentation!" href="../index.html"/> 
+    <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -90,17 +88,11 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming language</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/index.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="go/index.html">Go</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lisp/index.html">Lisp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rust/index.html">Rust</a></li>
-</ul>
-</li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../others/index.html">Others</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../distributed_system/index.html">Distributed System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Distributed System</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">Database</a></li>
 </ul>
 
@@ -146,13 +138,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Programming language</li>
+      <li>Resource Allocation in Mesos</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/programing_language/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/distributed_system/resource_allocation_in_mesos.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -165,41 +157,62 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="programming-language">
-<h1>Programming language<a class="headerlink" href="#programming-language" title="Permalink to this headline">¶</a></h1>
-<p>那么多种语言，每一种都有自己的优点与缺点。
-Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="python/index.html">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/source_code/index.html">Source Code of Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="python/source_code/index.html#opcode">解释器与 opcode</a></li>
-</ul>
+  <div class="section" id="resource-allocation-in-mesos">
+<h1>Resource Allocation in Mesos<a class="headerlink" href="#resource-allocation-in-mesos" title="Permalink to this headline">¶</a></h1>
+<p>相对于 k8s 之类的分布式资源管理系统，Mesos的 two-level 调度要相对独特一些。
+clickhouse
+—————-</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>数据是如何存储的</dt>
+<dd>怎么写入输入，怎么读取数据</dd>
+</dl>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/data_model.html">Python 的 Data Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/fluent_python/metaprograming.html">MetaPrograming</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="python/fluent_python/metaprograming.html#class-metaprograming">Class Metaprograming</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="python/fluent_python/metaprograming.html#a-class-factory">A Class Factory</a></li>
+<li>支持哪些查询方式，是如何支持的</li>
+<li>并发的数据访问</li>
+<li>需要的时候设置索引</li>
+<li>多线程</li>
+<li>数据 replication</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="go/index.html">Go</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="go/errors/index.html">Go 错误处理</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="lisp/index.html">Lisp</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="lisp/chezscheme/machine_code.html">ChezScheme Implementation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rust/index.html">Rust</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rust/variables/index.html">Rust 变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rust/function/index.html">Rust 函数</a></li>
-</ul>
-</li>
-</ul>
+<div class="section" id="tinylog">
+<h2>TinyLog<a class="headerlink" href="#tinylog" title="Permalink to this headline">¶</a></h2>
+<p>作为数据存放在磁盘上的引擎，TinyLog 属于最简单的那种。
+没一列数据都单独存储在一个压缩的文件里面。
+写入数据的时候，数据直接追加在文件的尾部。
+并发的访问有下面这些限制：
+1. 如果读写操作同时执行，读操作会报错
+2. 如果写并发，数据会出问题。
+推荐的做法是，写一次，然后在需要的时候反复的读。
+<cite>Queryies</cite> 操作是在单个执行流里面执行的，所以这个引擎是给小规模的数据量准备的，推荐是`1,000,000` 行。
+…
+处理小批量数据的时候，TinyLog 被拿来存储中间数据。</p>
+<p>## Log
+拿来放短期数据，一次性数据，测试</p>
+</div>
+<div class="section" id="memory">
+<h2>Memory<a class="headerlink" href="#memory" title="Permalink to this headline">¶</a></h2>
+<p>拿来做测试，也可以拿来小规模数据的快速计算。推荐 100,000,000 行数据。
+系统会用</p>
+<p>## Merge</p>
+<p>本身不存储数据，但是可以同时从任意多个 <cite>table</cite> 里面读取数据。</p>
+</div>
+<div class="section" id="distirbuted">
+<h2>Distirbuted<a class="headerlink" href="#distirbuted" title="Permalink to this headline">¶</a></h2>
+<p><cite>Distributed engine</cite> 不存储数据，但是支持在多个服务器上做分布式查询。</p>
+<p><cite>Distiributed（calcs, default, hits[, sharding_key])</cite> 里面的参数分别是 <cite>集群名</cite> <cite>数据库名</cite>，<cite>表名</cite>, 以及一个可选的 <cite>sharding key</cite></p>
+<p><cite>clacs</cite> 是 集群名字
+<cite>default</cite> 是 database name
+<cite>hits</cite> 是 table name
+<cite>sharding key</cite> 是 sharding keys</p>
+<p>除了直接从 remote servers 上面直接读取数据之外，我们还可以利用 remote server 做一些处理。
+比如在执行一条含有`GROUP BY` 的查询语句时，数据会在 <cite>remote servers</cite> 上执行 <cite>aggr</cite> 操作，然后把执行 <cite>aggr</cite> 之后得到的中间结果作为响应返回给请求服务器，然后再做进一步的 <cite>aggr</cite>。</p>
+<p>你可以在多个 <cite>replicas</cite> 之间做 LB。</p>
+<p>想往集群里面写入数据时，同城有两种方法：</p>
+<p>1. 可以定义好哪些要在哪些服务器上面做数据写入。
+这是</p>
+<ol class="arabic simple" start="2">
+<li>？？？</li>
+</ol>
 </div>
 </div>
 
@@ -210,15 +223,6 @@ Contents:</p>
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="python/index.html" class="btn btn-neutral float-right" title="Python" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to SunisDown’s NoteBook’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

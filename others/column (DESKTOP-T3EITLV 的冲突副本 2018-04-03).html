@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Others &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
+  <title>Column Store &mdash; SunisDown&#39;s NoteBook 0.0.1 documentation</title>
   
 
   
@@ -36,8 +36,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="SunisDown&#39;s NoteBook 0.0.1 documentation" href="../index.html"/>
-        <link rel="next" title="GoBeansDB" href="beansdb.html"/>
-        <link rel="prev" title="puppent" href="../tools/puppet.html"/> 
+        <link rel="up" title="Others" href="index.html"/>
+        <link rel="next" title="Developer Testing" href="developer_testing.html"/>
+        <link rel="prev" title="Column Store" href="column.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,11 +94,16 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../programing_language/index.html">Programming language</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Others</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Others</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="beansdb.html">GoBeansDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="column.html">Column Store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).html">Column Store</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Column Store</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#row">Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#column">Column</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpu">利用 CPU 缓存</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="developer_testing.html">Developer Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="how_to_debug.html">DEBUGING</a></li>
 <li class="toctree-l2"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
@@ -151,13 +157,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Others</li>
+          <li><a href="index.html">Others</a> &raquo;</li>
+        
+      <li>Column Store</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/others/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/others/column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -170,66 +178,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="others">
-<h1>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h1>
-<p>其他，零零散散</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="beansdb.html">GoBeansDB</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#why">Why</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beansdb.html#note">NOTE</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bitcask.html">Bitcask</a></li>
-<li class="toctree-l1"><a class="reference internal" href="column.html">Column Store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="column.html#row">Row</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#column">Column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column.html#cpu">利用 CPU 缓存</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).html">Column Store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).html#row">Row</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).html#column">Column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="column (DESKTOP-T3EITLV 的冲突副本 2018-04-03).html#cpu">利用 CPU 缓存</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="developer_testing.html">Developer Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developer_testing.html#tdd">TDD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="developer_testing.html#limitations-of-developer-testing">Limitations of Developer Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="how_to_debug.html">DEBUGING</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="how_to_debug.html#id1">寻找缺陷</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="how_to_debug.html#id2">科学的调试</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="if_statements.html">IF 语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nocache.html">Minimize Filesystem Caching Effects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#install">Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nocache.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="the_power_of_variable_names.html">如何取一个好的变量名</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id2">选择好的变量名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id3">准确的表述变量代表的事物</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id4">合适的长度</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id5">变量名中的计算值限定词</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id6">变量名中的对仗词</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="the_power_of_variable_names.html#id7">特定类型的命名</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id8">命名循环下标</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id9">命名状态变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id10">命名临时变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="the_power_of_variable_names.html#id11">命名布尔值</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="column-store">
+<h1>Column Store<a class="headerlink" href="#column-store" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="row">
+<h2>Row<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h2>
+<p>row store</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="column">
+<h2>Column<a class="headerlink" href="#column" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">1</span>         <span class="mi">2</span>       <span class="mi">3</span>        <span class="mi">4</span>
+<span class="o">+----+</span>  <span class="o">+----+</span>  <span class="o">+----+</span>   <span class="o">+-----+</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">+----+</span>  <span class="o">+----+</span>  <span class="o">+----|</span>   <span class="o">+-----+</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>  <span class="o">|</span>    <span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>
+<span class="o">+----+</span>  <span class="o">+----+</span>  <span class="o">+----+</span>   <span class="o">+-----+</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cpu">
+<h2>利用 CPU 缓存<a class="headerlink" href="#cpu" title="Permalink to this headline">¶</a></h2>
+<p>vid value index</p>
 </div>
 </div>
 
@@ -243,10 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="beansdb.html" class="btn btn-neutral float-right" title="GoBeansDB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="developer_testing.html" class="btn btn-neutral float-right" title="Developer Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../tools/puppet.html" class="btn btn-neutral" title="puppent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="column.html" class="btn btn-neutral" title="Column Store" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
